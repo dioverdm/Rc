@@ -39,8 +39,13 @@ const ProductDetails = () => {
     };
 
     // handling obtain-item
+    //const handleObtainItem = () => {
+    //   addItem(product);
+    //};
     const handleObtainItem = () => {
-        addItem(product);
+    const currentUrl = window.location.href;
+    const message = `Hola quisiera obtener ${title} ${currentUrl}`;
+    window.open(`https://wa.me/584248433917?text=${encodeURIComponent(message)}`, '_blank');
     };
 
 
@@ -148,8 +153,8 @@ const ProductDetails = () => {
                                     type="button"
                                     className="btn"
                                     onClick={handleObtainItem}
-                                >
-                                    Obtener
+                                    >
+                                     Obtener
                                 </button>
                             </div>
 
