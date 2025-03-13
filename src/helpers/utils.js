@@ -1,16 +1,16 @@
 
-// Display Money in Indian Format
+// Mostrar dinero en formato Chileno
 export const displayMoney = (n) => {
-    const numFormat = new Intl.NumberFormat('en-IN', {
+    const numFormat = new Intl.NumberFormat('es-CL', {
         style: 'currency',
-        currency: 'INR',
+        currency: 'CLP',
     });
 
     return numFormat.format(n).split('.', 1);
 };
 
 
-// Calculate Discount Percentage
+// Calcular porcentaje de descuento
 export const calculateDiscount = (discountedPrice, originalPrice) => {
     const discountedPercent = (discountedPrice / originalPrice) * 100;
 
@@ -18,7 +18,7 @@ export const calculateDiscount = (discountedPrice, originalPrice) => {
 };
 
 
-// Calculate Total Amount
+// Calcular importe total
 export const calculateTotal = (arr) => {
     const total = arr.reduce((accum, val) => accum + val, 0);
 
