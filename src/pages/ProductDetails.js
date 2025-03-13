@@ -14,7 +14,7 @@ import Services from '../components/common/Services';
 
 const ProductDetails = () => {
 
-    useDocTitle('Product Details');
+    useDocTitle('Detalles del producto');
 
     const { handleActive, activeClass } = useActive(0);
 
@@ -35,6 +35,11 @@ const ProductDetails = () => {
 
     // handling Add-to-cart
     const handleAddItem = () => {
+        addItem(product);
+    };
+
+    // handling obtain-item
+    const handleObtainItem = () => {
         addItem(product);
     };
 
