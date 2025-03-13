@@ -100,7 +100,7 @@ const ProductDetails = () => {
                                     }
                                 </span>
                                 <span>|</span>
-                                <Link to="*">{ratings} Ratings</Link>
+                                <Link to="*">{ratings} Calificaciones</Link>
                             </div>
 
                             <div className="separator"></div>
@@ -111,22 +111,21 @@ const ProductDetails = () => {
                                         {newPrice} &nbsp;
                                         <small className="del_price"><del>{oldPrice}</del></small>
                                     </h2>
-                                    <p className="saved_price">You save: {savedPrice} ({savedDiscount}%)</p>
-                                    <span className="tax_txt">(Inclusive of all taxes)</span>
+                                    <p className="saved_price">Ahorre: {savedPrice} ({savedDiscount}%)</p>
+                                    <span className="tax_txt">(Incluye todos los impuestos)</span>
                                 </div>
 
                                 <div className="badge">
-                                    <span><IoMdCheckmark /> In Stock</span>
+                                    <span><IoMdCheckmark /> Disponible</span>
                                 </div>
                             </div>
 
                             <div className="separator"></div>
 
                             <div className="prod_details_offers">
-                                <h4>Offers and Discounts</h4>
+                                <h4>Ofertas y descuentos</h4>
                                 <ul>
-                                    <li>No Cost EMI on Credit Card</li>
-                                    <li>Pay Later & Avail Cashback</li>
+                                    <li>No se aplican</li>
                                 </ul>
                             </div>
 
@@ -138,7 +137,14 @@ const ProductDetails = () => {
                                     className="btn"
                                     onClick={handleAddItem}
                                 >
-                                    Add to cart
+                                    Añadir a la cesta
+                                </button>
+                                <button
+                                    type="button"
+                                    className="btn"
+                                    onClick={handleObtainItem}
+                                >
+                                    Obtener
                                 </button>
                             </div>
 
@@ -151,7 +157,7 @@ const ProductDetails = () => {
 
             <section id="related_products" className="section">
                 <div className="container">
-                    <SectionsHead heading="Related Products" />
+                    <SectionsHead heading="Productos relacionados" />
                     <RelatedSlider category={category} />
                 </div>
             </section>
