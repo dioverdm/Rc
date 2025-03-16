@@ -22,10 +22,10 @@ const ProductDetails = () => {
 
     const { productId } = useParams();
 
-    // here the 'id' received has 'string-type', so converting it to a 'Number'
+    // Aquí el 'id' recibido tiene 'tipo cadena', por lo que se convierte en un 'number'
     const prodId = parseInt(productId);
 
-    // showing the Product based on the received 'id'
+    // mostrando el producto en función del 'id' recibido
     const product = productsData.find(item => item.id === prodId);
 
     const { images, title, info, category, finalPrice, originalPrice, ratings, rateCount } = product;
@@ -33,23 +33,20 @@ const ProductDetails = () => {
     const [previewImg, setPreviewImg] = useState(images[0]);
 
 
-    // handling Add-to-cart
+    // Manejo de Añadir al carrito
     const handleAddItem = () => {
         addItem(product);
     };
 
-    // handling obtain-item
-    //const handleObtainItem = () => {
-    //   addItem(product);
-    //};
+    // Manejo de Obtener item
     const handleObtainItem = () => {
     const currentUrl = window.location.href;
-    const message = `Hola quisiera obtener ${title} ${currentUrl}`;
+    const message = `Hola quisiera comprar: ${title} ${currentUrl}`;
     window.open(`https://wa.me/584248433917?text=${encodeURIComponent(message)}`, '_blank');
     };
 
 
-    // setting the very-first image on re-render
+    // Configurar la primera imagen al volver a renderizar
     useEffect(() => {
         setPreviewImg(images[0]);
         handleActive(0);
@@ -57,14 +54,14 @@ const ProductDetails = () => {
     }, [images]);
 
 
-    // handling Preview image
+    // Manejo de imagen de vista previa
     const handlePreviewImg = (i) => {
         setPreviewImg(images[i]);
         handleActive(i);
     };
 
 
-    // calculating Prices
+    // Calculando precios
     const discountedPrice = originalPrice - finalPrice;
     const newPrice = displayMoney(finalPrice);
     const oldPrice = displayMoney(originalPrice);
@@ -147,8 +144,10 @@ const ProductDetails = () => {
                                     className="btn"
                                     onClick={handleAddItem}
                                 >
-                                    Añadir a la cesta
+                                    Añadir al carrito
                                 </button>
+                            </div>
+                            <div className="prod_details_buy_btn">
                                 <button
                                     type="button"
                                     className="btn"
