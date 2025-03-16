@@ -8,7 +8,8 @@
     @include transition(background-color, 0.2s, linear);
 
     &.sticky {
-        background-color: var(--black-color);
+        background-color: var(--black-trans);
+        backdrop-filter: blur(2px);
     }
 }
 
