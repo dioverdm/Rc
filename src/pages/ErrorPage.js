@@ -8,9 +8,9 @@ const ErrorPage = () => {
                 <div className="container">
                     <div className="error_page_content">
                         <h1>404</h1>
-                        <h2>Not Found</h2>
-                        <h3>Sorry, the requested page was not found.</h3>
-                        <Link to="/" className="btn">Go Home</Link>
+                        <h2>Extraviado</h2>
+                        <h3>Lo sentimos, la página solicitada no fue encontrada.</h3>
+                        <Link to="/" className="btn">Ir al inicio</Link>
                     </div>
                 </div>
             </section>
