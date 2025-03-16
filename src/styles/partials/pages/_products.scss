@@ -47,6 +47,7 @@
 
     img {
         width: 70%;
+        border-radius: 10px;
         @include transition(transform, 0.25s, ease);
 
         &:hover {
@@ -70,6 +71,7 @@
 
 .products_btn {
     width: 100%;
+    border-radius: 10px;
     margin-top: 1.2rem;
 
     &.active {
