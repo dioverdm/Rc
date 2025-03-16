@@ -16,14 +16,14 @@ const Home = () => {
 
             <section id="featured" className="section">
                 <div className="container">
-                    <SectionsHead heading="Featured Products" />
+                    <SectionsHead heading="Productos destacados" />
                     <FeaturedSlider />
                 </div>
             </section>
 
             <section id="products" className="section">
                 <div className="container">
-                    <SectionsHead heading="Top Products" />
+                    <SectionsHead heading="Productos principales" />
                     <TopProducts />
                 </div>
             </section>
