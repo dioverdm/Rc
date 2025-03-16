@@ -37,12 +37,12 @@ const AccountForm = () => {
 
                                 {/*===== Form-Header =====*/}
                                 <div className="form_head">
-                                    <h2>{isSignupVisible ? 'Signup' : 'Login'}</h2>
+                                    <h2>{isSignupVisible ? 'Inscribirse' : 'Acceso'}</h2>
                                     <p>
-                                        {isSignupVisible ? 'Already have an account ?' : 'New to X-Beat ?'}
+                                        {isSignupVisible ? '¿Ya tienes una cuenta?' : 'Crear una cuenta'}
                                         &nbsp;&nbsp;
                                         <button type="button" onClick={handleIsSignupVisible}>
-                                            {isSignupVisible ? 'Login' : 'Create an account'}
+                                            {isSignupVisible ? 'Acceso' : 'Crear una cuenta'}
                                         </button>
                                     </p>
                                 </div>
@@ -60,7 +60,7 @@ const AccountForm = () => {
                                                     onChange={handleInputValues}
                                                     required
                                                 />
-                                                <label className="input_label">Username</label>
+                                                <label className="input_label">Nombre de usuario</label>
                                             </div>
                                         )
                                     }
@@ -74,7 +74,7 @@ const AccountForm = () => {
                                             onChange={handleInputValues}
                                             required
                                         />
-                                        <label className="input_label">Email</label>
+                                        <label className="input_label">Correo electrónico</label>
                                     </div>
 
                                     <div className="input_box">
@@ -86,7 +86,7 @@ const AccountForm = () => {
                                             onChange={handleInputValues}
                                             required
                                         />
-                                        <label className="input_label">Password</label>
+                                        <label className="input_label">Contraseña</label>
                                     </div>
 
                                     {
@@ -100,7 +100,7 @@ const AccountForm = () => {
                                                     onChange={handleInputValues}
                                                     required
                                                 />
-                                                <label className="input_label">Confirm Password</label>
+                                                <label className="input_label">Confirmar contraseña</label>
                                             </div>
                                         )
                                     }
@@ -109,12 +109,12 @@ const AccountForm = () => {
                                         type="submit"
                                         className="btn login_btn"
                                     >
-                                        {isSignupVisible ? 'Signup' : 'Login'}
+                                        {isSignupVisible ? 'Inscribirse' : 'Acceso'}
                                     </button>
 
                                 </div>
 
-                                {/*===== Form-Footer =====*/}
+                                {/*===== Form-Footer =====*}
                                 <div className="form_foot">
                                     <p>or login with</p>
                                     <div className="login_options">
@@ -124,14 +124,14 @@ const AccountForm = () => {
                                     </div>
                                 </div>
 
-                                {/*===== Form-Close-Btn =====*/}
+                                {/*===== Form-Close-Btn =====*}
                                 <div
                                     className="close_btn"
                                     title="Close"
                                     onClick={() => toggleForm(false)}
                                 >
                                     &times;
-                                </div>
+                                </div>*/}
 
                             </form>
                         </div>
