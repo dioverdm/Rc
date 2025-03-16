@@ -36,14 +36,14 @@ const Header = () => {
                 <div className="container">
                     <div className="navbar">
                         <h2 className="nav_logo">
-                            <Link to="/">X-Beat</Link>
+                            <Link to="/">SC</Link>
                         </h2>
                         <nav className="nav_actions">
                             <div className="search_action">
                                 <span onClick={() => toggleSearch(true)}>
                                     <AiOutlineSearch />
                                 </span>
-                                <div className="tooltip">Search</div>
+                                <div className="tooltip">Buscar</div>
                             </div>
 
                             <div className="cart_action">
@@ -55,7 +55,7 @@ const Header = () => {
                                         )
                                     }
                                 </Link>
-                                <div className="tooltip">Cart</div>
+                                <div className="tooltip">Carrito</div>
                             </div>
 
                             <div className="user_action">
@@ -64,14 +64,14 @@ const Header = () => {
                                 </span>
                                 <div className="dropdown_menu">
                                     <h4>Hello! {formUserInfo && <Link to="*">&nbsp;{formUserInfo}</Link>}</h4>
-                                    <p>Access account and manage orders</p>
+                                    <p>Acceda a su cuenta y gestione pedidos</p>
                                     {
                                         !formUserInfo && (
                                             <button
                                                 type="button"
                                                 onClick={() => toggleForm(true)}
                                             >
-                                                Login / Signup
+                                         Iniciar sesión / Registrarse       
                                             </button>
                                         )
                                     }
