@@ -36,7 +36,7 @@ const AllProducts = () => {
                         ) : (
                             <EmptyView
                                 icon={<BsExclamationCircle />}
-                                msg="No se encontraron resultados"
+                                msg="No Results Found"
                             />
                         )
                     }
