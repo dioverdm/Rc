@@ -146,8 +146,6 @@ const ProductDetails = () => {
                                 >
                                     Añadir al carrito
                                 </button>
-                            </div>
-                            <div className="prod_details_buy_btn">
                                 <button
                                     type="button"
                                     className="btn"
