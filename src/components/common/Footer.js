@@ -10,7 +10,7 @@ const Footer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubValue('');
-        alert('Thankyou, you are subscribed to receive our daily newsletter');
+        alert('Gracias, estás suscrito para recibir nuestro boletín diario.');
     };
 
     const currYear = new Date().getFullYear();
@@ -22,20 +22,20 @@ const Footer = () => {
                 <div className="wrapper footer_wrapper">
                     <div className="foot_about">
                         <h2>
-                            <Link to="/">X-Beat</Link>
+                            <Link to="/">Respuestos Caribe</Link>
                         </h2>
                         <div className="foot_subs">
-                            <p>Subscribe to our Email alerts to receive early discount offers, and new products info.</p>
+                            <p>Suscríbete a nuestras alertas por correo electrónico para recibir ofertas de descuento anticipadas e información sobre nuevos productos.</p>
                             <form onSubmit={handleSubmit}>
                                 <input
                                     type="email"
                                     className="input_field"
-                                    placeholder="Email Address*"
+                                    placeholder="Dirección de correo electrónico*"
                                     required
                                     value={subValue}
                                     onChange={(e) => setSubValue(e.target.value)}
                                 />
-                                <button type="submit" className="btn">Subscribe</button>
+                                <button type="submit" className="btn">Suscribir</button>
                             </form>
                         </div>
                     </div>
@@ -72,8 +72,8 @@ const Footer = () => {
                     <div className="sub_footer_wrapper">
                         <div className="foot_copyright">
                             <p>
-                                {currYear} | XBeat. All Rights Reserved.
-                                Built by | <a href="https://gulshansongara.netlify.app/">Gulshan Songara</a>
+                                {currYear} | Respuestos Caribe. Reservados todos los derechos.
+                                Desarrollado por | <a href="https://dioverdm.com/">DioverDM</a>
                             </p>
                         </div>
                         <div className="foot_social">
