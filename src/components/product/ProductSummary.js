@@ -74,13 +74,13 @@ const ProductSummary = (props) => {
                                 </div>
                             ) : active === 'overview' ? (
                                 <div className="prod_overview">
-                                    <h3>The <span>{title}</span> {info} provides with fabulous sound quality</h3>
+                                    <h3>Las <span>{title}</span> {info} de una fabulosa calidad</h3>
                                     <ul>
-                                        <li>Sound Tuned to Perfection</li>
-                                        <li>Comfortable to Wear</li>
-                                        <li>Long Hours Playback Time</li>
+                                        <li>Ejemplo 1</li>
+                                        <li>Ejemplo 2</li>
+                                        <li>Ejemplo 3</li>
                                     </ul>
-                                    <p>Buy the <b>{title} {info}</b> which offers you with fabulous music experience by providing you with awesome sound quality that you can never move on from. Enjoy perfect flexibility and mobility with amazing musical quality with these {category} giving you a truly awesome audio experience. It blends with exceptional sound quality and a range of smart features for an unrivalled listening experience.</p>
+                                    <p>Compre <b>{title} {info}</b> ahora y no se arrepentirá luego.</p>
                                 </div>
                             ) : (
                                 <div className="prod_reviews">
