@@ -9,13 +9,13 @@ import EmptyView from '../components/common/EmptyView';
 
 const Cart = () => {
 
-    useDocTitle('Cart');
+    useDocTitle('Carrito');
 
     const { cartItems } = useContext(cartContext);
 
     const cartQuantity = cartItems.length;
 
-    // total original price
+    // precio original total
     const cartTotal = cartItems.map(item => {
         return item.originalPrice * item.quantity;
     });
@@ -24,7 +24,7 @@ const Cart = () => {
     const displayCartTotal = displayMoney(calculateCartTotal);
 
 
-    // total discount
+    // descuento total
     const cartDiscount = cartItems.map(item => {
         return (item.originalPrice - item.finalPrice) * item.quantity;
     });
@@ -33,7 +33,7 @@ const Cart = () => {
     const displayCartDiscount = displayMoney(calculateCartDiscount);
 
 
-    // final total amount
+    // importe total final
     const totalAmount = calculateCartTotal - calculateCartDiscount;
     const displayTotalAmount = displayMoney(totalAmount);
 
@@ -46,9 +46,9 @@ const Cart = () => {
                         cartQuantity === 0 ? (
                             <EmptyView
                                 icon={<BsCartX />}
-                                msg="Your Cart is Empty"
+                                msg="Su carrito está vacío"
                                 link="/all-products"
-                                btnText="Start Shopping"
+                                btnText="Empezar a comprar"
                             />
                         ) : (
                             <div className="wrapper cart_wrapper">
@@ -66,16 +66,16 @@ const Cart = () => {
                                 <div className="cart_right_col">
                                     <div className="order_summary">
                                         <h3>
-                                            Order Summary &nbsp;
+                                            Resumen del pedido &nbsp;
                                             ( {cartQuantity} {cartQuantity > 1 ? 'items' : 'item'} )
                                         </h3>
                                         <div className="order_summary_details">
                                             <div className="price">
-                                                <span>Original Price</span>
+                                                <span>Precio original</span>
                                                 <b>{displayCartTotal}</b>
                                             </div>
                                             <div className="discount">
-                                                <span>Discount</span>
+                                                <span>Descuento</span>
                                                 <b>- {displayCartDiscount}</b>
                                             </div>
                                             <div className="delivery">
@@ -84,11 +84,11 @@ const Cart = () => {
                                             </div>
                                             <div className="separator"></div>
                                             <div className="total_price">
-                                                <b><small>Total Price</small></b>
+                                                <b><small>Precio total</small></b>
                                                 <b>{displayTotalAmount}</b>
                                             </div>
                                         </div>
-                                        <button type="button" className="btn checkout_btn">Checkout</button>
+                                        <button type="button" className="btn checkout_btn">Pagar</button>
                                     </div>
                                 </div>
                             </div>
