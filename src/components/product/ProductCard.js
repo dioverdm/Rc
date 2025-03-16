@@ -58,7 +58,7 @@ const ProductCard = (props) => {
                         className={`btn products_btn ${activeClass(id)}`}
                         onClick={handleAddItem}
                     >
-                        {active ? 'Added' : 'Add to cart'}
+                        {active ? 'Agregado' : 'Añadir al carrito'}
                     </button>
                 </div>
             </div>
