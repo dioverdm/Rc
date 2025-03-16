@@ -4,26 +4,26 @@ const servicesData = [
     {
         id: 1,
         icon: <FaShippingFast />,
-        title: "Express Delivery",
-        info: "Ships in 24 Hours",
+        title: "Entrega rápida",
+        info: "Envíos en 24 horas",
     },
     {
         id: 2,
         icon: <FaShieldAlt />,
-        title: "Brand Warranty",
-        info: "100% Original products",
+        title: "Garantía de marca",
+        info: "Productos 100% originales",
     },
     {
         id: 3,
         icon: <FaTags />,
-        title: "Exciting Deals",
-        info: "On all prepaid orders",
+        title: "Ofertas emocionantes",
+        info: "En todos los pedidos prepagos",
     },
     {
         id: 4,
         icon: <FaCreditCard />,
-        title: "Secure Payments",
-        info: "SSL / Secure сertificate",
+        title: "Pagos seguros",
+        info: "Metodos de pago directos",
     },
 ];
 
