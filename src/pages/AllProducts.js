@@ -10,7 +10,7 @@ import EmptyView from '../components/common/EmptyView';
 
 const AllProducts = () => {
 
-    useDocTitle('All Products');
+    useDocTitle('Catálogo');
 
     const { allProducts } = useContext(filtersContext);
 
@@ -36,7 +36,7 @@ const AllProducts = () => {
                         ) : (
                             <EmptyView
                                 icon={<BsExclamationCircle />}
-                                msg="No Results Found"
+                                msg="No se encontraron resultados"
                             />
                         )
                     }
