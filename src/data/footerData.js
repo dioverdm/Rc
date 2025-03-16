@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 export const footMenu = [
     {
         id: 1,
-        title: "Help",
+        title: "Ayuda",
         menu: [
             {
                 id: 1,
@@ -12,84 +12,84 @@ export const footMenu = [
             },
             {
                 id: 2,
-                link: "Track Order",
+                link: "Seguimiento de pedidos",
                 path: "/"
             },
             {
                 id: 3,
-                link: "Cancel Order",
+                link: "Cancelar pedido",
                 path: "/"
             },
             {
                 id: 4,
-                link: "Return Order",
+                link: "Devolución de pedido",
                 path: "/"
             },
             {
                 id: 5,
-                link: "Warranty Info",
+                link: "Información de garantía",
                 path: "/"
             },
         ]
     },
     {
         id: 2,
-        title: "Policies",
+        title: "Políticas",
         menu: [
             {
                 id: 1,
-                link: "Return Policy",
+                link: "Política de devoluciones",
                 path: "/"
             },
             {
                 id: 2,
-                link: "Security",
+                link: "Seguridad",
                 path: "/"
             },
             {
                 id: 3,
-                link: "Sitemap",
+                link: "Mapa del sitio",
                 path: "/"
             },
             {
                 id: 4,
-                link: "Privacy Policy",
+                link: "Política de privacidad",
                 path: "/"
             },
             {
                 id: 5,
-                link: "Terms & Conditions",
+                link: "Términos y condiciones",
                 path: "/"
             },
         ]
     },
     {
         id: 3,
-        title: "Company",
+        title: "Compañía",
         menu: [
             {
                 id: 1,
-                link: "About Us",
+                link: "Sobre nosotros",
                 path: "/"
             },
             {
                 id: 2,
-                link: "Contact Us",
+                link: "Contáctenos",
                 path: "/"
             },
             {
                 id: 3,
-                link: "Service Centres",
+                link: "Centros de servicio",
                 path: "/"
             },
             {
                 id: 4,
-                link: "Careers",
+                link: "Carreras",
                 path: "/"
             },
             {
                 id: 5,
-                link: "Affiliates",
+                link: "Afiliados",
                 path: "/"
             },
         ]
@@ -104,17 +104,12 @@ export const footSocial = [
     },
     {
         id: 2,
-        icon: <FaTwitter />,
-        path: "/",
-    },
-    {
-        id: 3,
         icon: <FaInstagram />,
         path: "/",
     },
     {
-        id: 4,
-        icon: <FaLinkedinIn />,
+        id: 3,
+        icon: <FaTiktok />,
         path: "/",
     },
 ];
