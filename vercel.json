@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [{
+    "src": "package.json",
+    "use": "@vercel/node",
+    "config": {
+      "zeroConfig": true // Opcional: simplifica aún más la configuración. Ver documentación de Vercel.
+    }
+  }],
+  "routes": [] // opcional, para redireccionamiento.
+  }
