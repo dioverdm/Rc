@@ -73,7 +73,7 @@ const Footer = () => {
                         <div className="foot_copyright">
                             <p>
                                 {currYear} | Respuestos Caribe. Reservados todos los derechos.
-                                Desarrollado por | <a href="https://dioverdm.com/">DioverDM</a>
+                                | Desarrollado por <a href="https://dioverdm.com/">DioverDM</a>
                             </p>
                         </div>
                         <div className="foot_social">
