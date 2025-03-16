@@ -143,10 +143,9 @@
 }
 
 .prod_details_buy_btn {
+     display: flex;
+     gap: 10px;
     .btn {
         width: 200px;
-    }
-    button {
-        display: flex;
     }
 }
