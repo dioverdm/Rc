@@ -21,5 +21,6 @@
 
     img {
         @include img-fit;
+        border-radius: 10px;
     }
 }
