@@ -1,5 +1,6 @@
 .container {
     max-width: 1440px;
+    border-radius: 10px;
     @include mx-auto;
     @include padding-x(0.75rem, 0.75rem);
 
