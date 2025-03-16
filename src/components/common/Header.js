@@ -63,7 +63,7 @@ const Header = () => {
                                     <AiOutlineUser />
                                 </span>
                                 <div className="dropdown_menu">
-                                    <h4>Hello! {formUserInfo && <Link to="*">&nbsp;{formUserInfo}</Link>}</h4>
+                                    <h4>Hola {formUserInfo && <Link to="*">&nbsp;{formUserInfo}</Link>}</h4>
                                     <p>Acceda a su cuenta y gestione pedidos</p>
                                     {
                                         !formUserInfo && (
