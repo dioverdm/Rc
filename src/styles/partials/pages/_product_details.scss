@@ -28,7 +28,7 @@
     gap: 1rem;
 
     .tabs_item {
-        @include dimension(50px, 5px);
+        @include dimension(6rem, 6rem);
         @include bordered(2px, rgba($color: #ffffff, $alpha: 0.2));
         border-radius: 10px;
         padding: 0.5rem;
