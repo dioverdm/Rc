@@ -4,7 +4,7 @@
     max-width: 480px;
     width: 100%;
     padding: 3rem;
-    border-radius: 3px;
+    border-radius: 10px;
 
     @include devices(xs) {
         @include padding-x(1rem, 1rem);
@@ -41,6 +41,7 @@
     button {
         color: #eee;
         opacity: 0.8;
+        border-radius: 10px;
 
         &:hover {
             opacity: 1;
@@ -75,6 +76,7 @@
 
     .login_btn {
         @include margin-y(0.8rem, 0.4rem);
+        border-radius: 10px;
     }
 
 }
