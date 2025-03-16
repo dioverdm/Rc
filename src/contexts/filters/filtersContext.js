@@ -79,7 +79,7 @@ const FiltersProvider = ({ children }) => {
                     break;
 
                 default:
-                    throw new Error('Wrong Option Selected');
+                    throw new Error('Opción incorrecta seleccionada');
             }
         }
 
