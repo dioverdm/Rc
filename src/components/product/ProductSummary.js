@@ -23,19 +23,19 @@ const ProductSummary = (props) => {
                                 className={`tabs_item ${activeClass('specs')}`}
                                 onClick={() => handleActive('specs')}
                             >
-                                Specifications
+                                Presupuesto
                             </li>
                             <li
                                 className={`tabs_item ${activeClass('overview')}`}
                                 onClick={() => handleActive('overview')}
                             >
-                                Overview
+                              Descripción
                             </li>
                             <li
                                 className={`tabs_item ${activeClass('reviews')}`}
                                 onClick={() => handleActive('reviews')}
                             >
-                                Reviews
+                                Reseñas
                             </li>
                         </ul>
                     </div>
@@ -47,27 +47,27 @@ const ProductSummary = (props) => {
                                 <div className="prod_specs">
                                     <ul>
                                         <li>
-                                            <span>Brand</span>
+                                            <span>Marca</span>
                                             <span>{brand}</span>
                                         </li>
                                         <li>
-                                            <span>Model</span>
+                                            <span>Modelo</span>
                                             <span>{title}</span>
                                         </li>
                                         <li>
-                                            <span>Generic Name</span>
+                                            <span>Nombre genérico</span>
                                             <span>{category}</span>
                                         </li>
                                         <li>
-                                            <span>Headphone Type</span>
+                                            <span>Tipo</span>
                                             <span>{type}</span>
                                         </li>
                                         <li>
-                                            <span>Connectivity</span>
+                                            <span>Capacidad</span>
                                             <span>{connectivity}</span>
                                         </li>
                                         <li>
-                                            <span>Microphone</span>
+                                            <span>Rango</span>
                                             <span>Yes</span>
                                         </li>
                                     </ul>
