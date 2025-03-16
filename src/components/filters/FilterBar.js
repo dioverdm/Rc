@@ -34,7 +34,7 @@ const FilterBar = () => {
                         onClick={() => handleMobFilterVisibility(true)}
                     >
                         <BiFilterAlt />
-                        <span>Filter</span>
+                        <span>Filtrar</span>
                     </h3>
                 </div>
                 <FilterBarOptions />
