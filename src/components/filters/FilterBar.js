@@ -26,7 +26,7 @@ const FilterBar = () => {
                         onClick={() => handleMobSortVisibility(true)}
                     >
                         <BiSort />
-                        <span>Sort</span>
+                        <span>Clasificar</span>
                     </h3>
                     <span>|</span>
                     <h3
