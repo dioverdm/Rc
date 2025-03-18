@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { footMenu, footSocial } from '../../data/footerData';
-import InstallPWA from './InstallPWA';
+import InstallPWA from './appInstall';
 
 
 const Footer = () => {
