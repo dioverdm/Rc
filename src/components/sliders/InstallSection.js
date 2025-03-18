@@ -24,7 +24,7 @@ function InstallSection() {
         <div className="install_section" style={{ textAlign: 'center', padding: '20px', backgroundColor: '#f5f5f5', margin: '20px 0' }}>
           <h2>¡Instala nuestra aplicación!</h2>
           <p>Disfruta de una experiencia más rápida y accede a nuestras funciones sin conexión.</p>
-          {/* Aquí puedes añadir el botón más tarde */}
+          <InstallPWA />
         </div>
       )}
     </>
