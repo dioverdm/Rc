@@ -1,43 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-function InstallPWA() {
-  const [deferredPrompt, setDeferredPrompt] = useState(null);
-  const [showInstallButton, setShowInstallButton] = useState(false);
-
-  useEffect(() => {
-    const handleBeforeInstallPrompt = (e) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setShowInstallButton(true);
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    };
-  }, []);
-
-  const handleInstallClick = () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('PWA installed');
-        } else {
-          console.log('PWA installation rejected');
-        }
-        setDeferredPrompt(null);
-        setShowInstallButton(false);
-      });
-    }
-  };
-
+function InstallPWA({ deferredPrompt, onInstallClick }) {
   return (
     <div>
-      {showInstallButton && (
-        <button onClick={handleInstallClick} className="btn">Instalar la aplicación</button>
-      )}
+      <button onClick={onInstallClick} className="btn">Instalar la aplicación</button>
     </div>
   );
 }
