@@ -4,6 +4,7 @@ import FeaturedSlider from '../components/sliders/FeaturedSlider';
 import SectionsHead from '../components/common/SectionsHead';
 import TopProducts from '../components/product/TopProducts';
 import Services from '../components/common/Services';
+import InstallSection from '../components/common/InstallSection';
 
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
                 </div>
             </section>
 
+            <InstallSection />
             <Services />
         </main>
     );
