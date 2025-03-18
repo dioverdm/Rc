@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { footMenu, footSocial } from '../../data/footerData';
+import InstallPWA from './InstallPWA';
 
 
 const Footer = () => {
@@ -36,6 +37,7 @@ const Footer = () => {
                                     onChange={(e) => setSubValue(e.target.value)}
                                 />
                                 <button type="submit" className="btn">Suscribir</button>
+                                <InstallPWA />
                             </form>
                         </div>
                     </div>
