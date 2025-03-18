@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import InstallPWA from '../cómo/appInstall';
 
 function InstallSection() {
   const [showInstallSection, setShowInstallSection] = useState(false);
