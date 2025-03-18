@@ -35,7 +35,7 @@
     }
 
     &.hero_slide-0::before {
-        content: "Over Ear";
+        content: "Caribe";
     }
 
     &.hero_slide-1::before {
@@ -43,7 +43,7 @@
     }
 
     &.hero_slide-2::before {
-        content: "Over Ear";
+        content: "Respuesto";
     }
 
     @include devices(lg) {
