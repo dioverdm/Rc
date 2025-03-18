@@ -102,8 +102,6 @@ const Cart = () => {
 
 export default Cart; */}
 
-// src/pages/Cart.js
-
 import React, { useContext } from 'react';
 import { BsCartX } from 'react-icons/bs';
 import { calculateTotal, displayMoney } from '../helpers/utils';
