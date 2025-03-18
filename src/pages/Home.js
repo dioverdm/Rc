@@ -4,7 +4,7 @@ import FeaturedSlider from '../components/sliders/FeaturedSlider';
 import SectionsHead from '../components/common/SectionsHead';
 import TopProducts from '../components/product/TopProducts';
 import Services from '../components/common/Services';
-import InstallSection from '../components/common/InstallSection';
+import InstallSection from '../components/sliders/InstallSection';
 
 
 const Home = () => {
