@@ -102,6 +102,8 @@ const Cart = () => {
 
 export default Cart; */}
 
+// src/pages/Cart.js
+
 import React, { useContext } from 'react';
 import { BsCartX } from 'react-icons/bs';
 import { calculateTotal, displayMoney } from '../helpers/utils';
@@ -186,7 +188,7 @@ const Cart = () => {
                                             </div>
                                             <div className="delivery">
                                                 <span>Delivery</span>
-                                                <b>Gratis</b>
+                                                <b>Free</b>
                                             </div>
                                             <div className="separator"></div>
                                             <div className="total_price">
