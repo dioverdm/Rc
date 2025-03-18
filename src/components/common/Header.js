@@ -6,6 +6,7 @@ import commonContext from '../../contexts/common/commonContext';
 import cartContext from '../../contexts/cart/cartContext';
 import AccountForm from '../form/AccountForm';
 import SearchBar from './SearchBar';
+import logo from '../../../public/logo512.png';
 
 
 const Header = () => {
@@ -36,7 +37,8 @@ const Header = () => {
                 <div className="container">
                     <div className="navbar">
                         <h2 className="nav_logo">
-                            <Link to="/">SC</Link>
+                            <Link to="/"><img src={logo} alt="Logo" style={{ width: '40px', height: '40px' }} />
+          <span>RC</span></Link>
                         </h2>
                         <nav className="nav_actions">
                             <div className="search_action">
