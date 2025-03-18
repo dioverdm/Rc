@@ -36,8 +36,8 @@ const Header = () => {
                 <div className="container">
                     <div className="navbar">
                         <h2 className="nav_logo">
-                            <Link to="/"><img src="/logo512.png" alt="Logo" style={{ width: '40px', height: '40px' }} />
-          <span>Respuestos Caribe</span></Link>
+                            <Link to="/"><img src="/banner.png" alt="Logo" style={{ width: '40px', height: '40px' }} />
+          </Link>
                         </h2>
                         <nav className="nav_actions">
                             <div className="search_action">
