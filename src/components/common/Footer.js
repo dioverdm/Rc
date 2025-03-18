@@ -37,7 +37,6 @@ const Footer = () => {
                                     onChange={(e) => setSubValue(e.target.value)}
                                 />
                                 <button type="submit" className="btn">Suscribir</button>
-                                <InstallPWA />
                             </form>
                         </div>
                     </div>
