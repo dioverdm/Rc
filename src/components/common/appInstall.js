@@ -36,7 +36,7 @@ function InstallPWA() {
   return (
     <div>
       {showInstallButton && (
-        <button onClick={handleInstallClick}>Instalar la aplicación</button>
+        <button onClick={handleInstallClick} className="btn">Instalar la aplicación</button>
       )}
     </div>
   );
