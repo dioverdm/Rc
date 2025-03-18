@@ -4,7 +4,22 @@ import InstallPWA from '../common/appInstall';
 function InstallSection() {
   const [showInstallSection, setShowInstallSection] = useState(false);
 
+  // Función para verificar si la PWA ya está instalada
+  const isAppInstalled = () => {
+    return (
+      window.matchMedia('(display-mode: standalone)').matches || // Verifica el modo standalone
+      window.navigator.standalone === true || // Para iOS
+      document.referrer.includes('android-app://') // Para Android
+    );
+  };
+
   useEffect(() => {
+    // Si la PWA ya está instalada, no mostramos la sección
+    if (isAppInstalled()) {
+      console.log('La PWA ya está instalada');
+      return;
+    }
+
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault();
       console.log('Evento beforeinstallprompt disparado'); // Verifica en la consola
