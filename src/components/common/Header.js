@@ -36,7 +36,7 @@ const Header = () => {
                 <div className="container">
                     <div className="navbar">
                         <h2 className="nav_logo">
-                            <Link to="/"><img src="/banner.png" alt="Logo" style={{ width: '80px', height: '40px' }} />
+                            <Link to="/"><img src="/banner.png" alt="Logo" style={{ width: '100px', height: '40px' }} />
           </Link>
                         </h2>
                         <nav className="nav_actions">
