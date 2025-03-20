@@ -13,7 +13,7 @@ const TopProducts = () => {
 
     // making a unique set of product's category
     const productsCategory = [
-        'All',
+        'Todas',
         ...new Set(productsData.map(item => item.category))
     ];
 
