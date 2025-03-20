@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TermsAndConditions = () => {
+const Terms = () => {
     return (
         <div className="container">
             <h1>Términos y Condiciones</h1>
@@ -24,4 +24,4 @@ const TermsAndConditions = () => {
     );
 };
 
-export default TermsAndConditions;
+export default Terms;
