@@ -3,9 +3,9 @@ import React from 'react';
 const Terms = () => {
     return (
         <>
-            <section id="error_page" className="section">
+            <section id="terms_page" className="section">
                 <div className="container">
-                    <div className="error_page_content">
+                    <div className="terms_page_content">
             <h1>Términos y Condiciones</h1>
             <p>Bienvenido a nuestro sitio web. Si continúa navegando y utilizando este sitio web, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones de uso, que junto con nuestra política de privacidad rigen la relación de [Nombre de la Compañía] con usted en relación con este sitio web.</p>
             
