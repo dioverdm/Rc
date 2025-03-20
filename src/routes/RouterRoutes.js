@@ -20,8 +20,8 @@ const RouterRoutes = () => {
                 <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/product-details/:productId" element={<ProductDetails />} />
                 <Route path="*" element={<ErrorPage />} />
-            </Routes>
                 <Route path="/terms" element={<Terms />} />
+            </Routes>
         </>
     );
 };
