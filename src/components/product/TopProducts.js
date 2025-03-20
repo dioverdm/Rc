@@ -14,18 +14,18 @@ const TopProducts = () => {
     // making a unique set of product's category
     const productsCategory = [
         'Todos',
-        ...new Set(productsData.map(item => item.brands))
+        ...new Set(productsData.map(item => item.brand))
     ];
 
     // handling product's filtering
-    const handleProducts = (category, i) => {
+    const handleProducts = (brand, i) => {
         if (category === 'Todos') {
             setProducts(productsData);
             handleActive(i);
             return;
         }
 
-        const filteredProducts = productsData.filter(item => item.brands === category);
+        const filteredProducts = productsData.filter(item => item.brand === brand);
         setProducts(filteredProducts);
         handleActive(i);
     };
