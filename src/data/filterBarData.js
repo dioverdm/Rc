@@ -24,17 +24,23 @@ export const sortMenu = [
 export const brandsMenu = [
     {
         id: 1,
-        label: "JBL",
+        label: "Hyundai",
         checked: false,
     },
     {
         id: 2,
-        label: "BoAt",
+        label: "Kia",
         checked: false,
     },
     {
         id: 3,
-        label: "Sony",
+        label: "Mitsubishi",
+        checked: false,
+    },
+
+    {
+        id: 4,
+        label: "SsangYong",
         checked: false,
     },
 ];
@@ -42,22 +48,22 @@ export const brandsMenu = [
 export const categoryMenu = [
     {
         id: 1,
-        label: "Headphones",
+        label: "Bujias",
         checked: false,
     },
     {
         id: 2,
-        label: "Earbuds",
+        label: "Motor",
         checked: false,
     },
     {
         id: 3,
-        label: "Earphones",
+        label: "Opción 3",
         checked: false,
     },
     {
         id: 4,
-        label: "Neckbands",
+        label: "Opción 4",
         checked: false,
     },
 ];
