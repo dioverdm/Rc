@@ -25,7 +25,7 @@ const TopProducts = () => {
             return;
         }
 
-        const filteredProducts = productsData.filter(item => item.category === category);
+        const filteredProducts = productsData.filter(item => item.brands === category);
         setProducts(filteredProducts);
         handleActive(i);
     };
