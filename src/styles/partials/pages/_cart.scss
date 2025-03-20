@@ -23,7 +23,7 @@
 }
 
 .cart_left_col {
-    background: var(--bg-color-4);
+    background: var(--bg-color-3);
     max-height: 600px;
     padding: 1rem 3rem;
     overflow-x: hidden;
@@ -46,6 +46,7 @@
     display: grid;
     grid-template-columns: 0.25fr 0.8fr;
     gap: 3rem;
+    border-radius: 10px;
     @include padding-y(3rem, 3rem);
 
     &:not(:last-child) {
