@@ -31,7 +31,7 @@ const productsData = [
         brand: "Bujias Champion",
         title: "Bujias Bl-15y Champion 350-305 /302-351 Motor V8 V6 Blazer",
         info: "Modelo: RC12YC, Rango térmico: 6",
-        category: "Headphones",
+        category: "Mitsubishi",
         type: "Champions",
         connectivity: "14mm",
         finalPrice: 14999,
