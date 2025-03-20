@@ -35,15 +35,15 @@
     }
 
     &.hero_slide-0::before {
-        content: "Caribe";
+        content: "Repuestos";
     }
 
     &.hero_slide-1::before {
-        content: "In Ear";
+        content: "";
     }
 
     &.hero_slide-2::before {
-        content: "Respuesto";
+        content: "caribe";
     }
 
     @include devices(lg) {
