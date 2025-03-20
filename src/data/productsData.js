@@ -2,7 +2,7 @@ const productsData = [
     {
         id: 1,
         tag: "hero-product",
-        tagline: "Keep the noise out, or in. You choose.",
+        tagline: "Lo mejor en bujías está en Repuestos Caribe.",
         heroImage: "/images/products/bujias1.png",
         images: [
             "/images/products/bujias1.png",
@@ -10,7 +10,7 @@ const productsData = [
         brand: "Bujias Champion",
         title: "Bujias Bl-15y Champion 350-305 /302-351 Motor V8 V6 Blazer",
         info: "Modelo: RC12YC, Rango térmico: 6",
-        category: "Headphones",
+        category: "Hyundai",
         type: "Champions",
         connectivity: "14mm",
         finalPrice: 14999,
@@ -23,7 +23,7 @@ const productsData = [
     {
         id: 2,
         tag: "featured-product",
-        tagline: "Keep the noise out, or in. You choose.",
+        tagline: "Lo mejor en bujías está en Repuestos Caribe.",
         heroImage: "/images/products/bujias1.png",
         images: [
             "/images/products/bujias1.png",
