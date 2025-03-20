@@ -19,7 +19,7 @@ const TopProducts = () => {
 
     // handling product's filtering
     const handleProducts = (category, i) => {
-        if (category === 'All') {
+        if (category === 'Todos') {
             setProducts(productsData);
             handleActive(i);
             return;
