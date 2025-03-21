@@ -39,7 +39,7 @@ export const footMenu = [
             {
                 id: 1,
                 link: "Política de devoluciones",
-                path: "/"
+                path: "/return-policies"
             },
             {
                 id: 2,
@@ -54,12 +54,12 @@ export const footMenu = [
             {
                 id: 4,
                 link: "Política de privacidad",
-                path: "/"
+                path: "/privacy"
             },
             {
                 id: 5,
                 link: "Términos y condiciones",
-                path: "/"
+                path: "/terms"
             },
         ]
     },
