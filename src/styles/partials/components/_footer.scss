@@ -26,7 +26,10 @@
 }
 
 .foot_subs {
-    display: flex;
+    form {
+        display: flex;
+    }
+
     p {
         @include margin-y(1rem, 1rem);
         font-size: 0.875rem;
