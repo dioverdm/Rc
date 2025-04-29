@@ -1,21 +1,93 @@
-.back_top {
+.back-top {
+    // Posicionamiento y tamaño
     position: fixed;
-    bottom: 2vh;
-    right: 1.3vw;
-    z-index: 99;
-    background-color: var(--main-color);
-    color: #fff;
-    font-size: 1.4rem;
-    padding: 0.6rem;
-    cursor: pointer;
-    border-radius: 3px;
-    transform: scale(0);
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 3rem;
+    height: 3rem;
+    
+    // Estilos visuales
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+    border-radius: 50%;
+    border: 2px solid var(--bg-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    
+    // Centrado del icono
     @include centered;
-    @include toggleVisibility(hidden, 0);
-    @include transition($duration: 0.3s);
+    
+    // Estado inicial (oculto)
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    @include transition(all, 0.3s, ease-out);
+    
+    // Icono (mejor usar pseudo-elemento para accesibilidad)
+    &::after {
+        content: '↑';
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
+    }
+    
+    // Estado visible
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    // Efectos hover
+    &:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    // Estilos para móviles
+    @include devices(md) {
+        width: 2.5rem;
+        height: 2.5rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        
+        &::after {
+            font-size: 1.2rem;
+        }
+    }
+    
+    @include devices(xs) {
+        width: 2.2rem;
+        height: 2.2rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    // Texto accesible (solo para screen readers)
+    .sr-only {
+        @extend .visually-hidden;
+    }
+}
 
-    &.popped {
-        transform: scale(1);
-        @include toggleVisibility(visible, 1);
+// Animación de aparición
+@keyframes bounceIn {
+    0% {
+        transform: translateY(20px) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-5px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+// Clase para animación alternativa
+.back-top.bounce {
+    &.active {
+        animation: bounceIn 0.4s ease-out forwards;
     }
 }
