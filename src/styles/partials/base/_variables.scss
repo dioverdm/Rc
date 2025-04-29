@@ -1,26 +1,41 @@
 :root {
-    --black-color: #f5f5f5; /*000000 | 201f1f*/
-    --black-trans: rgba(203, 203, 203, 0.50);
-
-    --bg-color: #ffffff; /*141414 | f5f5f5*/
-    --bg-color-2: #f5f5f5; /*161819*/
-    --bg-color-2-t: rgba(255, 255, 255, 0.5); /*rgba(22, 24, 25, 0.5)*/
-    --bg-color-3: #f5f5f5; /*222*/
-    --bg-color-4: #222;
-
-    --main-color: #eeb815; /*FF0000*/
-    --main-color-2: #eeb815; /*ED1D24*/
-
-    --text-color: #2b3b39; /*a9afc3*/
-    --text-muted: #6c757d;
-
-    --track-color: #202324;
-    --thumb-color: #454a4d;
-    --thumb-hover-color: #596268;
-
-    --fb-color: #3b5998;
-    --google-color: #a61c00;
-    --twitter-color: #1da1f2;
-
-    --text-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.8);
+  // Colores base
+  --white-color: #ffffff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #6c757d;
+  
+  // Colores principales (modificados para mejor contraste)
+  --primary-color: #eeb815;  // Amarillo dorado (se mantiene)
+  --primary-dark: #d6a413;    // Para hover/active
+  --primary-light: #f8d77a;   // Para efectos suaves
+  
+  // Colores de texto (optimizados para legibilidad)
+  --text-primary: #212529;    // Casi negro para máximo contraste
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  
+  // Colores de fondo
+  --bg-color: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  
+  // Componentes UI
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  // Estados y feedback
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --info-color: #17a2b8;
+  
+  // Redes sociales (mejor contraste)
+  --fb-color: #1877f2;        // Azul Facebook actualizado
+  --google-color: #db4437;    // Rojo Google actual
+  --twitter-color: #1da1f2;   // Se mantiene
+  
+  // Efectos
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
