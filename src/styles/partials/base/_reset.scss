@@ -1,28 +1,58 @@
+// ======================
+// Scrollbar Personalizada
+// ======================
+
+/* Scrollbar principal */
 ::-webkit-scrollbar {
-    width: 0.6vw;
+    width: 10px;
+    height: 10px;
+    
+    @include devices(md) {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--track-color);
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--thumb-color);
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid var(--bg-secondary);
+    
+    &:hover {
+        background-color: var(--primary-dark);
+    }
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--thumb-hover-color);
+/* Scrollbar Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-secondary);
 }
+
+// ======================
+// Selección de texto
+// ======================
 
 ::selection {
-    background-color: var(--main-color-2);
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+    text-shadow: none;
 }
 
 ::-moz-selection {
-    background-color: var(--main-color-2);
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+    text-shadow: none;
 }
+
+// ======================
+// Reset general
+// ======================
 
 *,
 *::before,
@@ -30,74 +60,203 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; // Elimina el highlight en móviles
 }
 
 html {
     font-size: 16px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--thumb-color) var(--track-color);
-
-    @include devices(xs) {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%; // Evita ajuste automático en iOS
+    scroll-behavior: smooth; // Scroll suave
+    
+    @include devices(lg) {
         font-size: 15px;
+    }
+    
+    @include devices(sm) {
+        font-size: 14px;
     }
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: var(--text-primary);
+    font-weight: 400;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// ======================
+// Elementos semánticos
+// ======================
+
+main {
+    flex: 1;
 }
 
 section {
     position: relative;
     overflow: hidden;
+    padding: 2rem 0;
+    
+    @include devices(md) {
+        padding: 1.5rem 0;
+    }
 }
+
+// ======================
+// Formularios y controles
+// ======================
 
 input,
 button,
-textarea {
+textarea,
+select {
     border: none;
     outline: none;
-    line-height: 1;
+    line-height: inherit;
     color: inherit;
     font-size: inherit;
     font-family: inherit;
     background-color: transparent;
+    appearance: none; // Elimina estilos nativos en móviles
+    border-radius: 0; // Reset para iOS
 }
 
 input[type="checkbox"],
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
 input[type="range"] {
-    accent-color: var(--main-color-2);
+    accent-color: var(--primary-color);
+    width: 100%;
+    cursor: pointer;
 }
 
 button {
     cursor: pointer;
+    user-select: none;
+    background: none;
 }
 
 textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
-ul {
-    list-style-type: none;
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23212529' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+    padding-right: 2rem !important;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
+// ======================
+// Elementos multimedia
+// ======================
 
 img,
-svg {
+svg,
+video {
+    max-width: 100%;
+    height: auto;
     vertical-align: middle;
     user-select: none;
 }
 
+svg {
+    fill: currentColor; // Hereda el color del texto
+}
+
+picture {
+    display: block;
+}
+
+// ======================
+// Tipografía y enlaces
+// ======================
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+    
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+ul, ol {
+    list-style: none;
+}
+
+// Texto tachado (para precios)
 del {
     color: var(--text-muted);
+    opacity: 0.8;
+}
+
+// ======================
+// Utilidades
+// ======================
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// ======================
+// Específicos para e-commerce automotriz
+// ======================
+
+// Estilo para partes compatibles
+[data-compatibility="true"] {
+    position: relative;
+    
+    &::after {
+        content: '✓ Compatible';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--success-color);
+        color: white;
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0 0 0 4px;
+    }
+}
+
+// Clase para stock agotado
+.out-of-stock {
+    position: relative;
+    opacity: 0.7;
+    
+    &::after {
+        content: 'AGOTADO';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--danger-color);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
 }
