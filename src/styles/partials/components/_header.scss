@@ -1,130 +1,291 @@
-#header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99;
     width: 100%;
-    @include padding-y(0.8rem, 0.8rem);
-    @include transition(background-color, 0.2s, linear);
+    z-index: 1000;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    @include transition(all, 0.3s, ease-out);
+    @include padding-y(1rem, 1rem);
 
     &.sticky {
-        background-color: var(--black-trans);
+        background-color: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 0;
     }
-}
 
-.navbar {
-    @include flexbox(space-between, center);
-}
+    &__container {
+        @include flexbox(space-between, center);
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 2rem;
 
-.nav_logo {
-    @include devices(xs) {
-        font-size: 1.2rem;
+        @include devices(lg) {
+            padding: 0 1.5rem;
+        }
+
+        @include devices(sm) {
+            padding: 0 1rem;
+        }
     }
-}
 
-.nav_actions {
-    @include flexbox($alignItems: center);
-    gap: 3rem;
-    font-size: 1.5rem;
+    &__logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        @include flexbox(center, center);
+        gap: 0.5rem;
 
-    @include devices(xs) {
-        gap: 2.5rem;
-        font-size: 1.2rem;
+        img {
+            height: 40px;
+            width: auto;
+        }
+
+        span {
+            color: var(--primary-color);
+        }
+
+        @include devices(md) {
+            font-size: 1.5rem;
+            
+            img {
+                height: 35px;
+            }
+        }
+
+        @include devices(sm) {
+            font-size: 1.3rem;
+            
+            img {
+                height: 30px;
+            }
+        }
     }
-}
 
-.search_action,
-.cart_action,
-.user_action {
-    position: relative;
-}
+    &__nav {
+        @include flexbox(center, center);
+        gap: 2rem;
 
-.search_action,
-.cart_action {
-    &:hover .tooltip {
-        @include toggleVisibility(visible, 1);
+        @include devices(lg) {
+            display: none;
+        }
+
+        &-link {
+            font-weight: 500;
+            color: var(--text-primary);
+            padding: 0.5rem 0;
+            position: relative;
+            @include transition(color, 0.2s);
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--primary-color);
+                @include transition(width, 0.3s);
+            }
+
+            &:hover,
+            &.active {
+                color: var(--primary-color);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
     }
-}
 
-.search_action,
-.user_action {
-    span {
-        cursor: pointer;
+    &__actions {
+        @include flexbox(center, center);
+        gap: 2rem;
+
+        @include devices(sm) {
+            gap: 1.5rem;
+        }
     }
-}
 
-.cart_action {
+    &__action {
+        position: relative;
+        color: var(--text-primary);
+        font-size: 1.4rem;
+        @include transition(all, 0.2s);
 
-    .badge {
-        @include centered;
-        @include dimension(20px, 20px);
+        &:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        &--search,
+        &--cart,
+        &--user {
+            cursor: pointer;
+        }
+
+        &--cart {
+            .cart-count {
+                position: absolute;
+                top: -8px;
+                right: -12px;
+                background-color: var(--primary-color);
+                color: var(--text-primary);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                font-size: 0.7rem;
+                font-weight: bold;
+                @include flexbox(center, center);
+            }
+        }
+    }
+
+    // Menú desplegable del usuario
+    &__dropdown {
         position: absolute;
-        top: 0;
-        right: -20px;
-        background-color: var(--main-color-2);
-        border-radius: 50%;
-    }
-}
-
-.user_action {
-
-    .dropdown_menu {
-        position: absolute;
-        top: 50px;
+        top: calc(100% + 10px);
         right: 0;
-        width: 17.5rem;
-        background-color: var(--bg-color-2);
-        padding: 1.4rem;
-        font-size: 0.9rem;
+        width: 280px;
+        background-color: var(--bg-color);
         border-radius: 10px;
-        @include bordered(1px, var(--text-muted));
-        @include toggleVisibility(hidden, 0);
-        @include transition(all, 0.2s, ease-in-out);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        padding: 1.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        @include transition(all, 0.2s);
+        z-index: 100;
 
-        h4 {
-            font-weight: 600;
-            letter-spacing: 0.5px;
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        &-header {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+
+            h4 {
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+
+                a {
+                    color: var(--primary-color);
+                    @include transition(color, 0.2s);
+
+                    &:hover {
+                        color: var(--primary-dark);
+                    }
+                }
+            }
+
+            p {
+                font-size: 0.85rem;
+                color: var(--text-muted);
+            }
+        }
+
+        &-body {
+            ul {
+                display: grid;
+                gap: 0.7rem;
+            }
 
             a {
-                color: var(--main-color);
-                opacity: 0.95;
+                display: block;
+                padding: 0.5rem 0;
+                color: var(--text-primary);
+                @include transition(color, 0.2s);
 
                 &:hover {
-                    opacity: 1;
+                    color: var(--primary-color);
                 }
             }
         }
 
-        p {
-            font-size: 0.8rem;
-            margin-top: 0.5rem;
-        }
-
-        button {
+        &-footer {
             margin-top: 1rem;
-            padding: 0.8rem 1rem;
-            @include bordered(1px, var(--text-muted));
-            @include transition(all, 0.3s, ease);
+            }
+
+        .logout-btn {
+            width: 100%;
+            padding: 0.7rem;
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            @include transition(all, 0.2s);
 
             &:hover {
-                color: #eee;
-                border-color: #eee;
-            }
-        }
-
-        li {
-            &:not(:last-child) {
-                margin-bottom: 0.5rem;
-            }
-
-            a:hover {
-                color: #eee;
+                border-color: var(--primary-color);
+                color: var(--primary-color);
             }
         }
     }
 
-    &:hover .dropdown_menu {
-        @include toggleVisibility(visible, 1);
+    // Menú móvil
+    &__mobile {
+        &-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            @include transition(color, 0.2s);
+
+            &:hover {
+                color: var(--primary-color);
+            }
+
+            @include devices(lg) {
+                display: block;
+            }
+        }
+
+        &-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--bg-color);
+            z-index: 999;
+            padding: 2rem;
+            transform: translateX(100%);
+            @include transition(transform, 0.3s);
+            overflow-y: auto;
+
+            &.show {
+                transform: translateX(0);
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.8rem;
+                color: var(--text-primary);
+                cursor: pointer;
+            }
+
+            ul {
+                margin-top: 3rem;
+                display: grid;
+                gap: 1.5rem;
+            }
+
+            a {
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: var(--text-primary);
+                padding: 0.5rem 0;
+                display: block;
+                border-bottom: 1px solid var(--border-color);
+            }
+        }
     }
 }
