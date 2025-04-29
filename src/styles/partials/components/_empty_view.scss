@@ -1,9 +1,65 @@
-.empty_view_wrapper {
+.empty-view {
     @include centered;
+    flex-direction: column;
     gap: 2rem;
-}
-
-.empty_view_icon {
-    font-size: 10rem;
-    color: var(--main-color-2);
+    text-align: center;
+    padding: 3rem 1rem;
+    
+    &__icon {
+        font-size: 8rem;
+        color: var(--primary-color);
+        opacity: 0.7;
+        
+        @include devices(md) {
+            font-size: 6rem;
+        }
+    }
+    
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+        
+        @include devices(md) {
+            font-size: 1.5rem;
+        }
+    }
+    
+    &__message {
+        color: var(--text-secondary);
+        max-width: 500px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.6;
+    }
+    
+    &__action {
+        .btn {
+            @include flexbox(center, center);
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            
+            svg {
+                width: 1.2rem;
+                height: 1.2rem;
+            }
+        }
+    }
+    
+    // Variantes específicas
+    &--search {
+        .empty-view__icon {
+            font-size: 6rem;
+        }
+        
+        .empty-view__title {
+            color: var(--text-secondary);
+        }
+    }
+    
+    &--cart {
+        .empty-view__icon {
+            color: var(--primary-dark);
+        }
+    }
 }
