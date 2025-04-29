@@ -1,50 +1,108 @@
+// ======================
+// Layout & Structure
+// ======================
+
+/// Establece dimensiones
+/// @param {Length} $width - Ancho (por defecto 'auto')
+/// @param {Length} $height - Alto (por defecto 'auto')
 @mixin dimension($width: auto, $height: auto) {
     width: $width;
     height: $height;
+    min-width: 0; // Previene problemas de desbordamiento
 }
 
+/// Centrado absoluto (flexbox)
 @mixin centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/// Centrado absoluto (grid)
+@mixin grid-centered {
     display: grid;
     place-items: center;
 }
 
+/// Margen horizontal automático
 @mixin mx-auto {
     margin-left: auto;
     margin-right: auto;
 }
 
-@mixin margin-x($marginLeft, $marginRight) {
-    margin-left: $marginLeft;
-    margin-right: $marginRight;
+/// Margen horizontal personalizado
+/// @param {Length} $left - Margen izquierdo
+/// @param {Length} $right - Margen derecho
+@mixin margin-x($left, $right: $left) {
+    margin-left: $left;
+    margin-right: $right;
 }
 
-@mixin margin-y($marginTop, $marginBottom) {
-    margin-top: $marginTop;
-    margin-bottom: $marginBottom;
+/// Margen vertical personalizado
+/// @param {Length} $top - Margen superior
+/// @param {Length} $bottom - Margen inferior
+@mixin margin-y($top, $bottom: $top) {
+    margin-top: $top;
+    margin-bottom: $bottom;
 }
 
-@mixin padding-x($paddingLeft, $paddingRight) {
-    padding-left: $paddingLeft;
-    padding-right: $paddingRight;
+/// Padding horizontal personalizado
+/// @param {Length} $left - Padding izquierdo
+/// @param {Length} $right - Padding derecho
+@mixin padding-x($left, $right: $left) {
+    padding-left: $left;
+    padding-right: $right;
 }
 
-@mixin padding-y($paddingTop, $paddingBottom) {
-    padding-top: $paddingTop;
-    padding-bottom: $paddingBottom;
+/// Padding vertical personalizado
+/// @param {Length} $top - Padding superior
+/// @param {Length} $bottom - Padding inferior
+@mixin padding-y($top, $bottom: $top) {
+    padding-top: $top;
+    padding-bottom: $bottom;
 }
 
-@mixin img-fit {
+// ======================
+// Images & Backgrounds
+// ======================
+
+/// Ajuste de imagen para contenedor
+@mixin img-fit($fit: cover, $position: center) {
     @include dimension(100%, 100%);
-    object-fit: cover;
+    object-fit: $fit;
+    object-position: $position;
 }
 
-@mixin bg-cover {
+/// Fondo cubriendo todo el espacio
+@mixin bg-cover($position: center) {
     background-size: cover;
-    background-position: center;
+    background-position: $position;
     background-repeat: no-repeat;
 }
 
-@mixin pseudo($content: "", $top: 0, $left: 0, $width: auto, $height: auto) {
+/// Fondo con color semitransparente
+@mixin bg-overlay($color: rgba(0, 0, 0, 0.5)) {
+    position: relative;
+    
+    &::after {
+        content: '';
+        @include dimension(100%, 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $color;
+    }
+}
+
+// ======================
+// Visual Effects
+// ======================
+
+/// Crea un elemento pseudo
+/// @param {String} $content - Contenido (por defecto "")
+/// @param {Length} $top - Posición top (por defecto 0)
+/// @param {Length} $left - Posición left (por defecto 0)
+@mixin pseudo($content: "", $top: 0, $left: 0, $width: 100%, $height: 100%) {
     content: $content;
     position: absolute;
     top: $top;
@@ -53,62 +111,169 @@
     pointer-events: none;
 }
 
-@mixin bordered($borderWidth, $borderColor) {
-    border: $borderWidth solid $borderColor;
+/// Borde con opción de radio
+/// @param {Length} $width - Grosor del borde
+/// @param {Color} $color - Color del borde
+/// @param {Length} $radius - Radio de las esquinas (opcional)
+@mixin bordered($width, $color, $radius: null) {
+    border: $width solid $color;
+    @if $radius {
+        border-radius: $radius;
+    }
 }
 
-@mixin flexbox($justifyContent: flex-start, $alignItems: flex-start) {
+/// Sombra para tarjetas de producto
+@mixin card-shadow($intensity: 0.1) {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, $intensity);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, $intensity * 1.5);
+    }
+}
+
+/// Efecto de hover para botones/links
+@mixin hover-effect($bg-color: var(--primary-color), $text-color: white) {
+    transition: all 0.25s ease-in-out;
+    
+    &:hover {
+        background-color: $bg-color;
+        color: $text-color;
+        transform: translateY(-2px);
+    }
+}
+
+// ======================
+// Flexbox & Grid
+// ======================
+
+/// Configuración flexbox
+/// @param {String} $justify - Alineación horizontal (flex-start)
+/// @param {String} $align - Alineación vertical (flex-start)
+/// @param {String} $direction - Dirección (row)
+/// @param {String} $wrap - Wrap (nowrap)
+@mixin flexbox($justify: flex-start, $align: flex-start, $direction: row, $wrap: nowrap) {
     display: flex;
-    justify-content: $justifyContent;
-    align-items: $alignItems;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
 }
 
-@mixin grid-cols($colsCount, $colsWidth, $gap) {
-    grid-template-columns: repeat($colsCount, $colsWidth);
+/// Configuración grid de columnas
+/// @param {Number} $cols - Número de columnas
+/// @param {Length} $size - Tamaño de columnas
+/// @param {Length} $gap - Espacio entre celdas
+/// @param {Length} $row-gap - Espacio entre filas (opcional)
+@mixin grid-cols($cols, $size: 1fr, $gap: 0, $row-gap: $gap) {
+    display: grid;
+    grid-template-columns: repeat($cols, $size);
     gap: $gap;
+    row-gap: $row-gap;
 }
 
-@mixin transition($prop: all, $duration, $timingFn: ease) {
-    transition: $prop $duration $timingFn;
+/// Grid areas para layouts complejos
+@mixin grid-areas($areas) {
+    grid-template-areas: $areas;
 }
 
+// ======================
+// Transitions & Animations
+// ======================
+
+/// Transición personalizada
+/// @param {String} $prop - Propiedad (all)
+/// @param {Duration} $duration - Duración
+/// @param {Timing-function} $timing - Función de tiempo (ease)
+/// @param {Duration} $delay - Retardo (0s)
+@mixin transition($prop: all, $duration: 0.3s, $timing: ease, $delay: 0s) {
+    transition: $prop $duration $timing $delay;
+}
+
+/// Visibilidad controlada
+/// @param {String} $visibility - Valor de visibility
+/// @param {Number} $opacity - Valor de opacidad
 @mixin toggleVisibility($visibility, $opacity) {
     visibility: $visibility;
     opacity: $opacity;
 }
 
+/// Animación de fade in
+@mixin fade-in($duration: 0.3s) {
+    animation: fadeIn $duration ease-out;
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
 
-// mixin for media-queries
+// ======================
+// Responsive Design
+// ======================
 
+/// Breakpoints responsive
+/// @param {String} $breakpoint - Nombre del breakpoint (xl, lg, md, sm, xs)
 @mixin devices($breakpoint) {
-
-    @if $breakpoint==xl {
-        @media (max-width: 1399.98px) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
+    } @else {
+        @warn "El breakpoint '#{$breakpoint}' no está definido";
     }
+}
 
-    @else if $breakpoint==lg {
-        @media (max-width: 1023.98px) {
-            @content;
-        }
+// Mapa de breakpoints (mejor mantenimiento)
+$breakpoints: (
+    xl: 1399.98px,
+    lg: 1023.98px,
+    md: 767.98px,
+    sm: 639.98px,
+    xs: 479.98px
+);
+
+// ======================
+// Componentes específicos para e-commerce automotriz
+// ======================
+
+/// Estilo para etiquetas de "Nuevo" o "Oferta"
+@mixin product-badge($bg-color: var(--primary-color), $text-color: white) {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+/// Estilo para precios
+@mixin price-style($size: 1.25rem, $color: var(--primary-color)) {
+    font-size: $size;
+    color: $color;
+    font-weight: bold;
+    
+    &.old-price {
+        color: var(--text-muted);
+        text-decoration: line-through;
+        font-size: $size * 0.8;
+        margin-right: 0.5rem;
     }
+}
 
-    @else if $breakpoint==md {
-        @media (max-width: 767.98px) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint==sm {
-        @media (max-width: 639.98px) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint==xs {
-        @media (max-width: 479.98px) {
-            @content;
-        }
+/// Estilo para filtros de productos
+@mixin filter-style {
+    background-color: var(--bg-secondary);
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    
+    @include devices(md) {
+        padding: 0.5rem;
     }
 }
